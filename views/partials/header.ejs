@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Vacation Blog</a>
+            </div>
+            <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <%if(!currentUser) {%>
+                        <li><a style="font-family: 'Fuggles', cursive; padding-right: 7px; color:white" href="/login">Login</a></li>
+                        <li><a style="font-family: 'Fuggles', cursive; color:white;" href="/register">Sign Up</a></li>
+                    <%}else { %>
+                        <li><a href="#" style="font-family: 'Fuggles', cursive; padding-right: 7px; color:white">signed in as: <%= currentUser.username %></a></li>
+                        <li><a href="/logout" style="font-family: 'Fuggles', cursive; color:white;">Logout</a></li>
+                         <%}%>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <% if(message1 && message1.length>0){ %>
+        <div class="alert alert-danger">
+            <%= message1 %>
+        </div>
+        <% } %>
+        <% if(message2 && message2.length>0){ %>
+        <div class="alert alert-success">
+            <%= message2 %>
+        </div>
+        <% } %>
+    </div>
+
+    
+    

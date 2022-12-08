@@ -1,0 +1,24 @@
+<%- include("../partials/header")%>
+<div class="container" style=" text-align:center; padding-top: 20vh;">
+    <div class="row">
+        <h1 style="text-align: center;">Create a New Vacation Blog</h1>
+        <div style=" width: 30%; margin: 25px auto; ">
+            <form style="text-align: left;" action="/blogs" method="POST">
+                <label for="n">Name</label>
+                <div class="form-group"><input id="n" class="form-control" type="text" name="name" placeholder="name"></div>
+                <br>
+                <label for="i">Image</label>
+                <div class="form-group"><input id="i" class="form-control" type="text" name="img" placeholder="image url"></div>
+                <br>
+                <label for="d">Description</label>
+                <div class="form-group"><textarea class="form-control" name="des" placeholder="Description" id="d" cols="30" rows="6"></textarea></div>
+                <br>
+                <div class="form-group"><button class="btn btn-sm btn-outline-dark">Submit!</button></div>
+            </form>
+            
+            <a style="color: black;" href="/blogs">Go Back!</a>
+        </div>
+    
+    </div>
+</div>
+<%- include("../partials/footer")%>

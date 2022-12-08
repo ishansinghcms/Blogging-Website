@@ -1,0 +1,24 @@
+<%- include("../partials/header")%>
+<div class="container" style="text-align: center; padding-top: 25vh;">
+    <div class="row">
+        <h1 style="text-align: center;"><%= foundBB.name %></h1>
+        <div style=" width: 30%; margin: 25px auto; ">
+            <form style="text-align: left;" action="/blogs/<%= foundBB._id %>?_method=PUT" method="POST">
+                <label for="n">Name</label>
+                <div class="form-group"><input id="n" class="form-control" type="text" name="c[name]" value="<%= foundBB.name %>"></div>
+                <br>
+                <label for="i">Image</label>
+                <div class="form-group"><input id="i" class="form-control" type="text" name="c[image]" value="<%= foundBB.image %>"></div>
+                <br>
+                <label for="d">Description</label>
+                <div class="form-group"><input id="d" class="form-control" type="text" name="c[description]" value="<%= foundBB.description %>"></div>
+                <br>
+                <div class="form-group"><button class="btn btn-sm btn-outline-dark">Submit!</button></div>
+            </form>
+            <br>
+            <a style="color: black;" href="/blogs">Go Back!</a>
+        </div>
+    
+    </div>
+</div>
+<%- include("../partials/footer")%>

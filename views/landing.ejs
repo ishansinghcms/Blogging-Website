@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VacationBlog</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css ">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    </head>
+    <body>
+    
+    <div class="container">
+        <% if(message1 &&message1.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= message1 %>
+            </div>
+        <% } %>
+        <% if(message2 && message2.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= message2 %>
+            </div>
+        <% } %>
+    </div>
+    
+    <div id="landing-header">
+ 		<h1>Welcome To Our Vacation Blog!</h1>
+        <h3>Share your recent vacation pictures to let people around the world know about your lovely experience and help them plan their dream vacation</h3>
+		<a href="/blogs" class="btn btn-lg btn-success">View All Destinations</a>
+    </div>
+    
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+<%- include("./partials/footer")%>

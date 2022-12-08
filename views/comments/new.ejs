@@ -1,0 +1,17 @@
+<%- include("../partials/header")%>
+<div class="container" style=" text-align:center; padding-top: 20vh;">
+    <div class="row">
+        <h1 style="text-align: center;">Add New Comment to- <%= blog.name %></h1>
+        <div style=" width: 30%; margin: 25px auto; ">
+            <form action="/blogs/<%= blog._id %>/comments" method="POST">
+                <div class="form-group"><input class="form-control" type="text" name="commentX[text]" placeholder="text"></div>
+                <br>
+                <div class="form-group"><button class="btn btn-sm btn-outline-dark">Submit!</button></div>
+            </form>
+            <br>
+            <a style="color: black;" href="/blogs/<%= blog._id %>">Go Back!</a>
+        </div>
+    
+    </div>
+</div>
+<%- include("../partials/footer")%>

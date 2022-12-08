@@ -1,0 +1,52 @@
+<%- include("../partials/header")%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <br>
+            <h2><%= d.name %></h2>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="image-responsive" src="<%= d.image %>" alt="">
+                <div class="caption-full">
+                    <h5>Description</h5>
+                    <p><%= d.description %></p>
+                    <p>
+                        <em>Submitted by: <strong><%= d.author.username %></strong></em>
+                    </p>
+                    <% if(currentUser && d.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-sm btn-warning" href="/blogs/<%= d._id %>/edit">Edit</a>
+                        <form id="delete_form" action="/blogs/<%= d._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    <% } %>
+                </div>
+            </div>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-sm btn-success" href="/blogs/<%= d._id %>/comments/new">Add New Comment</a>
+                </div>
+                <hr>
+                <% d.comments.forEach(function(cc){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%= cc.author.username %></strong>
+                            <span class="pull-right">10 days ago</span>
+                            <p>
+                                <%= cc.text %>
+                            </p>
+                            <% if(currentUser && cc.author.id.equals(currentUser._id)){ %>
+                                <a class="btn btn-sm btn-outline-dark" 
+                                href="/blogs/<%= d._id %>/comments/<%= cc._id %>/edit">Edit</a>
+                                <form id="delete_form1" action="/blogs/<%= d._id %>/comments/<%= cc._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-sm btn-outline-dark">Delete</button>
+                                </form>
+                            <% } %>
+                        </div>
+                    </div>                   
+                <% }) %>            
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("../partials/footer")%>
