@@ -22,7 +22,7 @@
 * Any user can comment on any user's blog and can delete only his/her comment.
 * Owner of the blog can delete his/her blog as well as all the comments on that particular blog.
 
-Some screenshots-
+<h3>Some screenshots-</h3>
 
 * landing page
 ![Screenshot 2023-03-12 152049](https://user-images.githubusercontent.com/66079152/224537722-ff282684-37c2-4caf-98e9-50d1e10a573f.png)
