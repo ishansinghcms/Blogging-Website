@@ -22,6 +22,14 @@
 * Any user can comment on any user's blog and can delete only his/her comment.
 * Owner of the blog can delete his/her blog as well as all the comments on that particular blog.
 
+<h3>Steps to run the application-</h3>
+
+* Clone project: git clone https://github.com/ishansinghcms/Blogging-Website.git
+* cd Blogging_Website
+* run mongoDB server using command: mongod
+* npm start
+
+
 <h3>Some screenshots-</h3>
 
 * landing page
